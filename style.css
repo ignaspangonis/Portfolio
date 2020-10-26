@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: auto 0;
+}
+
+body {
+    font-family: 'Poppins', Verdana, sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
+
+.content-wrap {
+    min-height: 95vh;
+    padding-bottom: 2.5rem;
+}
+
+/***********************************************************************
+ *  Navigation Bar
+ **********************************************************************/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+
+    background: #222;
+    padding: 0 15%;
+    position: sticky;
+    z-index:5;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 7.5px 0 7.5px 0;
+    font-family: 'Lora', Georgia, sans-serif;
+}
+
+nav a {
+    color: white;
+}
+
+.nav-links { 
+    list-style-type: none; 
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+}
+
+.nav-link { 
+    padding: 10px;
+    margin: auto 10px;
+}
+.nav-links .button { 
+    padding: 3px 5px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #2e1c00;
+    background-color: rgb(139, 126, 0);
+    transition: background-color 0.3s linear;
+}
+.nav-link:not(.button) a:hover,
+.nav-link a:hover::after { color: #ccc; }
+.nav-links .button:hover { 
+    background-color: rgb(112, 101, 0);
+}
+
+/* Desktop */
+
+.nav-links li a {
+    display: block;
+    padding: 15px 10px;
+}
+
+.nav-link {
+    display: block;
+    width: auto;
+}
+
+@media only screen and (max-width: 910px) { /* only when <=910px */
+    nav {
+        padding: 0 10%;
+        font-size: 12px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) { /* only when <=600px */
+    nav {
+        padding: 0 auto;
+        font-size: 12px;
+    }
+    
+}
+
+/***********************************************************************
+ *  COVER
+ **********************************************************************/
+.cover {
+    width: 70%;
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* viewport height; 50vh = 50% */
+    min-height: 340px;
+    margin: 30px 15% auto 15%;
+    gap: 5px;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: 2fr 1.5fr;
+}
+
+.photo { 
+    grid-area: 1 / 1 / 3 / 2; 
+    margin: auto 20px auto auto;
+}
+.photo img {
+    display: block;
+    max-height: 300px;
+    padding: 20px;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+}
+.photo:hover img {
+    transform: scale(1.13);
+}
+.hello { 
+    font-weight: 700;
+    font-size: 50px;
+    grid-area: 1 / 2 / 2 / 3; 
+    margin: auto auto 10px 0;
+    font-family: 'Lora', Georgia, sans-serif;
+}
+.hello2 { 
+    font-size: 20px;
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 0 auto auto 0;
+}
+
+/***********************************************************************
+ *  ABOUT
+ **********************************************************************/
+ .about {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    min-height: 200px;
+    margin: 0 15% auto 15%;
+}
+h1 {
+    width: 160px;
+    height: 45px;
+    text-align: center;
+    margin: 10px auto;
+    font-family: 'Lora', Georgia, sans-serif;
+}
+.line {
+    width: 50px;
+    height: 5px;
+    margin: 0 auto 20px auto;
+    background-color: #222;
+    border-radius: 10px;
+}
+.about-content {
+    height: auto;
+    font-weight: 100;
+    margin: 10px auto;
+}
+.about div p {
+    width: 100%;
+    text-align: left;
+}
+
+/***********************************************************************
+ *  Projects grid
+ **********************************************************************/
+
+.title {
+    margin-top: 5%;
+}
+
+.grid-wrapper {
+    margin: 30px 15% 0 15%;
+    padding: auto 40px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.box {
+    background-color: rgb(224, 224, 224);
+    margin: 20px;
+    height: 400px;
+}
+.zone  {
+    text-align: center;
+    border-radius:4px;
+    border:1px solid #bbb;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    /* For background: */
+    display: block;
+    position: relative;
+}
+.zone:after { /* For background */
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.12;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    transform: scale(1.13);
+}
+.first:after {
+    background-image: url('img/words.jpeg');
+}
+.second:after {
+    background-image: url('img/pakeliui.jpg');
+}
+.third:after {
+    background-image: url('img/evise.png');
+    background-color: rgb(92, 70, 40);
+}
+.zone h2 {
+    z-index: 2;
+    position: relative;
+    font-size:2em;
+    margin-top: 5.5em;
+    transition: margin-top 0.3s linear;
+}
+.zone:hover h2 {
+    margin-top: 3em;
+}
+.zone p {
+    z-index: 2;
+    position: relative;
+    margin: 0.2em 1em auto 1em;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+.zone:hover p {
+    opacity: 1;
+}
+.zone h3 {
+    color: rgb(105, 105, 105);
+}
+
+/***********************************************************************
+ *  Projects grid
+ **********************************************************************/
+
+.github:after {
+    background-image: url('img/github.jpg');
+    background-size: auto 100%;
+}
+.linkedin:after {
+    background-image: url('img/linkedin.jpg');
+    background-size: auto 150%;
+}
+.facebook:after {
+    background-image: url('img/fb.jpg');
+    background-size: auto 150%;
+}
+
+/***********************************************************************
+ *  Footer
+ **********************************************************************/
+
+footer {
+    background: #222;
+    display: flex;
+    align-items: center;
+    /* Positioning: */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    min-height: 5vh;
+    z-index: 4;
+}
+footer div {
+    color: #aaa;
+    font-size: small;
+    margin-left: 16%;
+}
