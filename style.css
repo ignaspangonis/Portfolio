@@ -241,9 +241,17 @@ h1 {
     background-image: url('img/pakeliui.jpg');
 }
 .third:after {
-    background-image: url('img/evise.png');
+    background-image: url('https://ksd-images.lt/display/aikido/store/fb960c9583c116b413557809f831bb5b.jpg');
     background-color: rgb(92, 70, 40);
 }
+.fourth:after {
+    background-image: url('https://i.ytimg.com/vi/X3a6JqKyJgI/maxresdefault.jpg');
+}
+
+.fifth:after {
+    background-image: url('https://i2.wp.com/oecdedutoday.com/wp-content/uploads/2020/10/PISA-Volume-VI-blog.jpg?fit=1200%2C675&ssl=1');
+}
+
 .zone h2 {
     z-index: 2;
     position: relative;
